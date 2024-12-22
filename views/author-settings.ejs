@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Author Settings Page</title>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h3>MicroBlogger:</h3> 
+            <b>Author Home Page</b>
+        </div>
+        <nav>
+            <a href="/author/home"><button>Back to Home Page</button></a>
+        </nav>
+    </header>
+    
+    <div class="page-info">
+        <h1>Change User Settings</h1>
+    </div>
+    
+    <div class="settings">
+        <form action="update-user" method="post">
+            <p>User: <input id="user" type="text" name="user_name" /></p>
+            <p>Title: <input id="title" type="text" name="blog_title" /></p>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

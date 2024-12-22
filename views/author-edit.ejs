@@ -1,0 +1,43 @@
+<!-- FILEPATH: /c:/Users/swans/Documents/University of London/UOL_ Level 5 Courses/Current/CM2040 Databases, Networks and the Web/midterm/views/author-edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Author Edit Page</title>
+</head>
+<body>
+   
+    <header>
+        <div class="header-title">
+            <h3>MicroBlogger:</h3> 
+            <b>Author Home Page</b>
+        </div>
+        <nav>
+            <a href="/author/home"><button>Back to Home Page</button></a>
+        </nav>
+    </header>
+    
+    
+    <div class="page-info">
+        <h1>Edit Article</h1>
+    </div>
+
+    <div class="article-info">
+        <p>Date Created: <%= article.created_at %></p>
+        <p>Date Modified: <%= article.last_modified %></p>
+    </div>
+
+    <div class="editor">
+        <form method="POST" action="/author/update-article">
+            <input type="hidden" name="articleId" value="<%= article.article_id %>">
+            <p>Title: <input type="text" name="title" value="<%= article.title %>"></p>
+            <p>Content: <textarea name="content"><%= article.content %></textarea></p>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    
+</body>
+</html>
+

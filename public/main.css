@@ -1,0 +1,141 @@
+/* ---Define global color variables--- */
+:root {
+    
+    --primaryColour: #043d7a; 
+    --secondaryColour: #343a40; 
+    --accentColour1: #ced4da; 
+    --accentColour2: #007bff; 
+    --accentColour3: #6c757d; 
+    --accentColour4: #adb5bd;
+    --contrastColour1: #dc3545;
+    
+    /*
+    --primaryColour: #007bff;
+    --secondaryColour: #333333;
+    --accentColour1: #7bb2e9;
+    --accentColour2: #546e88;
+    --accentColour3: #fcfcfc; 
+    --accentColour4: #ffc107;
+    --contrastColour1: #28a745;
+    */
+    
+}
+
+/* ---Define Basic Styles--- */
+body {
+    background: var(--accentColour1);
+}
+
+h1 {
+    color: var(--primaryColour);
+}
+
+h2 {
+    color: var(--secondaryColour);
+}
+
+h3 {
+    color: var(--contrastColour1);
+}
+
+button {
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--primaryColour);
+    color: var(--accentColour4);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accentColour4);
+    color: var(--primaryColour);
+}
+
+textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+/* ---Header--- */
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accentColour3);
+    padding: 20px;
+}
+
+.header-title h3, .header-title b {
+    display: inline;
+}
+
+nav button {
+    margin-left: 10px;
+    background-color: var(--primaryColour); 
+    color: var(--accentColour4); 
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: var(--accentColour4); 
+    color: var(--primaryColour);
+}
+
+/* ---Tables--- */
+table {
+    width: 50%;
+    border: 2px solid var(--secondaryColour);
+}
+
+table th {
+    background-color: var(--primaryColour);
+    color: var(--accentColour4);
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+}
+
+/* Alternating row colours*/
+table tr:nth-child(even) {
+    background-color: var(--accentColour1);
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--accentColour2);
+}
+
+/* The Action buttons in the tables */
+.actionButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.actionButtons button {
+    background-color: var(--primaryColour);
+    color: var(--accentColour3);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hovering in table */
+table tr:hover {
+    background-color: var(--accentColour3);
+    color: var(--secondaryColour);
+}
+
+.actionButtons button:hover {
+    background-color: var(--accentColour4);
+    color: var(--primaryColour);
+}
+
+

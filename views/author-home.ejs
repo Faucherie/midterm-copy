@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Author Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h3>MicroBlogger:</h3> 
+            <b>Author Home Page</b>
+        </div>
+        <nav>
+            <a href="/author/settings"><button>Settings</button></a>
+            <a href="/"><button>Go Back to Main Home Page</button></a>
+        </nav>
+    </header>
+    
+    <div class="blog-info">
+        <h1><%= blogTitle %></h1>
+        <h2><%= blogAuthor %></h2>
+    </div>
+
+    <div class="articles">
+
+        <div class="draft-articles">
+            <table>
+                <caption><h2>Draft Articles</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Created</th>
+                        <th>Last Modified</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% draftArticles.forEach(function(article){ %>
+                    <tr>
+                        <td><%= article.title %></td>
+                        <td><%= article.created_at %></td>
+                        <td><%= article.last_modified %></td>
+                        <td>
+                            <div class="actionButtons">
+                                <a href="/author/edit-article/<%= article.article_id %>">
+                                    <button type="button">EDIT</button>
+                                </a>
+
+                                <form   action="/author/publish-article" method="post">
+                                    <input type="hidden" name="article_id" value="<%= article.article_id %>" />
+                                    <button type="submit">PUBLISH</button>
+                                </form>
+
+                                <form   action="/author/delete-article" method="post">
+                                    <input type="hidden"  name="article_id" value="<%= article.article_id %>" />
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <a href="/author/new-draft"><button>NEW DRAF</button></a>
+        </div>
+
+        <div class="published-articles">
+            <table>
+                <caption><h2>Published Articles</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Created</th>
+                        <th>Last Modified</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% publishedArticles.forEach(function(article){ %>
+                    <tr>
+                        <td><%= article.title %></td>
+                        <td><%= article.created_at %></td>
+                        <td><%= article.last_modified %></td>
+                        <td>
+                            <div class="actionButtons">
+                                <button>READ</button>
+                                
+                                <a href="/author/edit-article/<%= article.article_id %>">
+                                    <button type="button">EDIT</button>
+                                </a>
+
+                                <form action="/author/delete-article" method="post">
+                                    <input type="hidden" name="article_id" value="<%= article.article_id %>" />
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

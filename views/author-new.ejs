@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Author New Draft</title>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h3>MicroBlogger:</h3> 
+            <b>New Draft</b>
+        </div>
+        <nav>
+            <a href="/author/home"><button>Back to Home Page</button></a>
+        </nav>
+    </header>
+    
+    <div class="page-info">
+        <h1>Create New Draft</h1>
+    </div>
+    
+    <div class="editor">
+        <form method="POST" action="/author/create-draft">
+            
+            <label for="title">Title:</label>
+            <input id="title" type="text" name="title" placeholder="Title Example"/> <br>
+
+            <label for="content">Start Writing:</label>
+            <textarea id="content" name="content" rows="10" cols="50" placeholder="&quot;No matter how great a writer, artist, or entrepreneur, he is a mortal, he is fallible. He is not proof against Resistance. He will drop the ball; he will crash. That&apos;s why they call it rewriting&quot;Steven Pressfield, Do The Work"></textarea> <br>
+            
+            <button type="submit">Save Draft</button>
+        </form>
+    </div>
+</body>
+</html>
